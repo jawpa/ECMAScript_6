@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// un set es un conjunto de valores almacenados
+		// estos valores puden iterarse en el orden en que fueron almacenados
+		//cada valor o elemento es único
+		var dogs = new Set();
+
+		dogs.add("chihuahua");
+		dogs.add("bulldog");
+		dogs.add("bullterrier");
+		dogs.add("grandanés");
+
+
+		console.log(dogs);
+
+		// podemos preguntar si existe algún elemento
+		console.log(dogs.has('bulldog'));
+		// obtnemos true
+
+		// queremos contar la cantidad de elementos con la propiedad size
+		// si repetimos a un elemento, no lo cuenta
+		dogs.add("grandanés");		
+		console.log(dogs.size);
+	</script>
+</body>
+</html>

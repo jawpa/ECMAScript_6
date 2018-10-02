@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var libro = {
+			titulo : "it",
+			autor : "stephen king",
+			genero : "terror",
+			valoracion : 9,
+			tags :  ["pennywise","floating","payaso","derry"]
+		}
+
+		// otenemos el valor de alguna propiedad
+		console.log(libro.tags[3]);
+
+		// le podemos asignar variables a los valores de las propiedades
+		var opinion = "es un lindo libro";
+
+		var libro2 = {
+			titulo : "it",
+			autor : "stephen king",
+			genero : "terror",
+			valoracion : 9,
+			tags :  ["pennywise","floating","payaso","derry"],
+			opinion : opinion
+		}
+
+		console.log(libro2.opinion);
+
+		console.log(libro2["opinion"]);
+
+		// podemos borrar propiedades:
+		delete(libro2.opinion);
+
+		console.log(libro2["opinion"]);		
+		// obtenemos undefinded
+	</script>
+</body>
+</html>

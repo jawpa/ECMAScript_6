@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="saludo"></div>
+	<script>
+		var place = "ulster";
+		var age = 23;
+		const NAME = "molnar";
+		var saludo = `Hola mi nombre es ${NAME} vivo en ${place} y tengo ${age} años`;
+		console.log(saludo);
+		// uso del tilde como comillas inclusivas
+		console.log(`Hola mi nombre es ${NAME} vivo en ${place} y tengo ${age} años`);
+		document.getElementById('saludo').innerHTML = saludo;
+		
+	</script>
+</body>
+</html>

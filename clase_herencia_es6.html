@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Dog{
+			constructor(nombre,color){
+				this.nombre = nombre;
+				this.color = color;
+			}
+
+			ladrar(){
+				return "guau guau";
+			}
+
+			// método estático
+			static hablar(){
+				return "hola, soy el perro que habla";
+			}
+		}
+
+		class Rulfo extends Dog{
+			constructor(nombre,color,edad){
+				super(nombre,color);
+				this.edad = edad;
+			}
+
+			habla_informado(){
+				return `hola, me llamo ${this.nombre}, tengo ${this.edad} y mi pelo es de color ${this.color}`;
+			}
+
+			// cuasi sobreescribimos un método
+			ladrar_fuerte(){
+				return `${super.ladrar()} GUAUUUUUUUU`;
+			}
+		}
+
+		var rulfo = new Rulfo("rulfo","naranja",32);
+		console.log(rulfo.ladrar());
+		console.log(rulfo.habla_informado());
+		console.log(rulfo.ladrar_fuerte());
+
+
+	</script>
+</body>
+</html>

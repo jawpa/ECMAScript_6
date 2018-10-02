@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function device(type,name,brand) {
+			console.log(`el ${type} ${name} es de la marca ${brand}`);
+		}
+
+		// tenemos un array con los datos 
+		var cellphone = new Array("Celular","ladrillo","motorola");
+
+		// podemos usar la manera tradicional de darle argumentos a la función
+		device(cellphone[0],cellphone[1],cellphone[2]);
+
+		// o la nueva
+		device(...cellphone);
+
+	</script>
+</body>
+</html>

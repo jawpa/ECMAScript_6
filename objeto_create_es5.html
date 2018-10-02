@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var libro = {
+			titulo : "it",
+			autor : "stephen king",
+			genero : "terror",
+			valoracion : 9,
+			tags :  ["pennywise","floating","payaso","derry"]
+		}
+
+		// creamos otro objeto basado en libro
+		// libro será el prototipo
+		var libro2 = Object.create(libro);
+
+
+		// verificamos que libro es prototipo
+		console.log(libro.isPrototypeOf(libro2));
+		//obtenemos true
+
+
+		// le damos otra propiedad
+		libro2["hablar"] = function () {
+			console.log("hola me llamo " + this.titulo);
+		};
+
+		// y la llamamos
+		libro2.hablar();
+
+		// en profundidad:
+		// crear un objeto
+		var libro3 = {};
+
+
+		// es igual a:
+		var libro4 = Object.create(Object.prototype);
+
+
+
+
+
+
+
+		// uso de new
+		// emulando a class
+
+		function libro1() {
+			this.titulo = "it";
+			this.autor = "stephen king";
+			this.genero = "terror";
+			this.valoracion = 9;
+			this.tags =  ["pennywise","floating","payaso","derry"];
+		}
+
+		// las propiedades no forman un prototipo, se pasa una copia
+		libro5 = new libro1();
+		
+		// comprobamos:
+		console.log(libro5.valoracion);
+
+	</script>
+</body>
+</html>

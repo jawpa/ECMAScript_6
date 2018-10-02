@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// las variables de bloque, sólo existen en el bloque donde son declaradas
+		function suma() {
+			let resultado = 5 + 7;
+			console.log(`el resultado de la suma es ${resultado}`);
+		}
+
+		suma();
+
+		// si queremos usar la variable de bloque afuera:
+		//console.log(`el resultado de la suma es ${resultado}`);
+		// nos devuelve:
+		// Uncaught ReferenceError: resultado is not defined
+
+		function suma2() {
+			var resultado2 = 5 + 7;
+			console.log(`el resultado de la suma es ${resultado2}`);
+		}
+
+		suma2();
+
+		
+		// también obtenemos: Uncaught ReferenceError: resultado2 is not defined
+		//console.log(`el resultado de la suma es ${resultado2}`);
+
+
+		function suma3() {
+			 resultado3 = 5 + 7;
+			console.log(`el resultado de la suma es ${resultado3}`);
+		}
+
+		suma3();
+
+		// obtenemos bien el resultado
+		console.log(`el resultado de la suma es ${resultado3}`);
+
+
+	</script>
+</body>
+</html>

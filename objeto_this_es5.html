@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var libro = {
+			titulo : "it",
+			autor : "stephen king",
+			genero : "terror",
+			valoracion : 9,
+			tags :  ["pennywise","floating","payaso","derry"],
+			saludar: function () {
+						console.log('hola, me llamo ' + this.titulo);
+					},
+			saludarAutor: function () {
+				// body...
+			
+				// se puede guardar el valor de this y usarlo en otro contexto
+				var funcion = function (argument) {
+					console.log("hola de parte de " + this.autor);
+				}.bind(this);
+
+				// en cualquier lugar dónde se llama, el this tendrá este contexto
+				funcion();
+
+			},
+
+		}
+
+		// otenemos el valor de la propiedad
+		// this hace referencia al objeto en sí
+		libro.saludar();
+
+		libro.saludarAutor();
+
+	</script>
+</body>
+</html>

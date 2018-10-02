@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// la función recibe parámetros spread, como array
+		function hardware(...components) {
+			console.log(components);
+			for(let componente of components){
+				console.log(componente);
+			}
+		}
+
+		// le ponemmos parámetros de manera convencional
+		hardware("maouse","ram","disco duro");
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// las promesas representan operaciones que no se han concretado
+		// y esperan que en un futuro se concreten
+		// normalmente se utilizan para ejecutar tareas asíncronas
+		// se tienen que tomar en cuenta los estados
+		// estado incial: una promesa se encuentra en espera
+		// (no ha sido cumplida o rechazada)
+		// el segundo estado es cuando una promesa está cumplida
+		//el último estado es cuando una promesa es rechazada
+
+		// recibimos dos estados, que serán métodos:
+		// ejeccutamos resolve cuando la promesa es cumplida
+		// reject, se ejecuta cuando la promesa no se cumple
+		var promise = new Promise(function (resolve,reject) {
+			const FLAG = 6;
+			if (FLAG == 5) {
+				resolve("muy buen funcionamiento");
+			}else{
+				reject("no se cumplió la promesa");
+			}
+
+		})
+
+		// para usar la promesa utilizamos el método then
+		// se encarga de devolver una promesa
+		// hay dos argumentos, el primero cuando sale bien, el segundo cuando sale mal
+		promise.then(function (response) {
+			console.log(response);
+		},function (error) {
+			console.log(error);
+		})
+
+		// si corremos con el valor 5, obtenemos: muy buen funcionamiento
+		// si corremos con otro valor obtenemos: no se cumplió la promesa
+
+
+
+
+
+		// usamos promise con un settimeout
+		// y va respnder en tres segundos
+		var promise = new Promise(function (resolve,reject) {
+			// setTimeout(function () {
+			// 	resolve('funciona muy bien la promesa con demora');
+			// },6000);
+
+			// escribimos un settimeout de una manera más elegante
+			setTimeout(resolve,5000,"promesa funcionando con demora");
+
+		})
+
+		// usamos a la promesa definida
+		promise.then(function (response) {
+			console.log(response);
+		},function (error) {
+			console.log(error);
+		})		
+	</script>
+</body>
+</html>

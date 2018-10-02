@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// las declaraciones de funciones suben arriba de todo en los scripts de javascript
+		// se las puede invocar antes de definirlas son problemas:
+		holamundo();
+
+		function holamundo() {
+			console.log("hola mundo");
+		}
+
+		// con las expresiones funcionales esto no funciona
+
+		// primero carga a las variables inicializadas y a las funciones declaradas
+		// luego carga a las asignaciones, operaciones y código de ejecución
+	</script>
+</body>	
+</html>

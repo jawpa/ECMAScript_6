@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head> 
+<body>
+	<div id="resultado"></div>
+	<script>
+		// ejecutamos el timeout 5 veces, se va incrementando la espera
+		// obtenemos 6 cinco veces porque es el valor final de i
+		// cuando se ejecuta el timeout, ya vale 6; el bucle termina antes de que innicie el temporizador
+		for (var i = 0; i <= 5; i++) {
+			setTimeout(function () {
+				console.log(i);
+				document.getElementById('resultado').innerHTML = i;
+			},1000*i);
+		}
+
+		// para solucionar esto hay que añadir otro scope, otro ámbito 
+		// y una referencia a la variable externa
+		// la función es el único elemento que crea ámbitos
+		// tiene que haber una función con cada iteración
+		// y que se produzca un closure de la variable del bucle
+		// la función atrapa a la variable i mediante la función z
+		for (var i = 0; i <= 5; i++) {
+			function interna() {
+				var z = i;
+				setTimeout(function () {
+					console.log(z);
+					document.getElementById('resultado').innerHTML = z;
+				},2000*z);
+			}
+
+			interna();
+		}
+
+
+		
+
+		// la función atrapa a la variable i mediante la función z
+		// usando una expresión funcional que se invoca inmediatamente 
+		for (var i = 0; i <= 5; i++) {
+			(function () {
+				var z = i;
+				setTimeout(function () {
+					console.log(z);
+					document.getElementById('resultado').innerHTML = z;
+				},2000*z);
+		
+			})();
+		
+		}
+
+
+		// la función atrapa a la variable i mediante la función z
+		// la función interna recibirá un parámetro que será la i del bucle externo
+
+		for (var i = 0; i <= 5; i++) {
+			(function (z) {
+				setTimeout(function () {
+					console.log(z);
+					document.getElementById('resultado').innerHTML = z;
+				},2000*z);
+		
+			})(i);
+		
+		}
+	</script>
+</body>
+</html>

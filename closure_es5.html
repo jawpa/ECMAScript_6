@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// closure es una función que retorna desde otra función
+		// la función que retorna envuelve todo ese ámbito de variables y se lo lleva con ella
+		function externa() {
+			var variable_funcion = "hola, soy la variable de la función externa";
+			function interna() {
+				console.log(variable_funcion);
+			}
+			// acá se produce el retorno
+			return interna;
+		}
+
+		// le asignamos a una variable externa la función
+		var externa = externa();
+
+		// si la inspeccionamos, vemos que tiene el valor de la variable es la función interna:
+		// ƒ interna() {
+		// 		console.log(variable_funcion);
+		// 	} 
+		console.log(externa);
+
+		// la podemos usar como una función
+		// y obtenemos: hola, soy la variable de la función externa
+		// la función interna, se llevó a la variable de la función externa
+		externa();
+
+
+
+
+		// segundo ejemplo:
+		function externa2() {
+			var variable_funcion = "hola, soy la variable de la función externa 2";
+			
+			function funcionInterna() {
+				console.log(variable_funcion);
+			}
+			
+			// pasamos funciones como valores
+			otraFuncionExterna(funcionInterna);
+		}
+
+		// acepta una función como parámetro y la ejecuta
+		function otraFuncionExterna(funcion) {
+			funcion();
+		}
+
+		// llama a la otra función externa, que ejecuta a la interna y vemos el valor de la variable interna.
+		// la función interna se llevó el valor de la variable de la función, la sacó del ámbito
+		externa2();
+
+
+
+
+
+
+
+		// otro ejemplo:
+		function esperar(mensaje) {
+			setTimeout(function(){
+				console.log(mensaje);
+			},2000);
+		}
+
+		// la función esperar se acciona dos segundos después
+		// porque es absorbida, encerrado por su función interna
+		esperar("hola mundo con retraso");
+
+
+	</script>
+</body>
+</html>

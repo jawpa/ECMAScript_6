@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var animals = new Array("Perro","Gato","Ratón");
+
+		// asignación sin destructuring
+		var perro = animals[0];
+		var gato = animals[1];
+		var raton = animals[2];
+
+		console.log(perro, gato, raton);
+		// nos devuelve: Perro Gato Ratón
+
+
+		// con destructuring
+		// la asignación se hace en una sola línea
+		// igualamos un arreglo con otro
+		var [perro,gato,raton] = animals;
+
+		console.log(perro, gato, raton);
+		// nos devuelve: Perro Gato Ratón
+	</script>
+</body>
+</html>

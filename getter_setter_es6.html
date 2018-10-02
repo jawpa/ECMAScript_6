@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Persona{
+			get name(){
+				// atributo privado
+				return this._name;
+			}
+
+			// recibe la propiedad name
+			set name(name){
+				// atributo privado
+				this._name = name;
+			}
+		}
+
+		var persona = new Persona();
+		persona.name = "Guntra";
+		console.log(persona.name);
+	</script>
+</html>

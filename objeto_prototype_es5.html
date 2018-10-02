@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var persona = {
+			nombre: 'pepe',
+			profesion: "contador",
+			saludar:function () {
+				console.log("hola soy " + this.nombre);
+			}
+		};
+
+		var persona1 = {
+			nombre: 'conca',
+			profesion: "músico",
+			saludar:function () {
+				console.log("hola soy " + this.nombre);
+			}
+		};
+
+		var persona3 = {
+			nombre : "juan",
+		}
+
+		// llamamos a la función del objeto 
+		persona.saludar();
+
+		// podemos copiar una propiedad de un objeto a otro
+		persona3.saludar = persona1.saludar;
+
+		persona3.saludar();
+
+		console.log(persona.toString);
+		// en javascript todos los objetos, los strings, los números tienen propiedades y métodos heredados (del prototipo de los objetos)
+		// todos son objetos
+		// el padre de todos los objetos es Object prototype
+		// sus hijos inmediatos: Array prototype, Number prototype, String prototype, Function prototype
+		// todos tienen métodos y propiedades
+
+		console.log(persona.hasOwnProperty("nombre"));
+		// le preguntamos al objeto persona si tiene la propiedad nombre y es propia (está definida dentro del objeto y no es heredado)
+
+		// no es recomendable extender la funcionalidad de los objetos nativos
+		// anti-pattern
+		// es un diseño muy malo porque se asume que existe otra propiedad llamada nombre
+		Object.prototype.saludar2 = function () {
+			console.log("hola, me llamo " + this.nombre);
+		}
+
+		// en todos los objetos tendremos una herencia implícita de la función saludar2
+		persona.saludar2();
+		persona1.saludar2();
+		persona3.saludar2();		
+	</script>
+</body>
+</html>

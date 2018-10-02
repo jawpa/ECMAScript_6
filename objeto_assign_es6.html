@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// el objeto assign copia los valores de uno o más objetos a otro objeto
+		var persona = {};
+		var nombre = {nombre: "javier"};
+		var apellido = {apellido: "diaz de vivar"};
+		var edad = {edad: 23};
+
+		// usamos el Object.assign
+		// el primer argumento es el destino, el resto las fuenteas (lo que se les copia al destino)
+		Object.assign(persona,nombre, apellido,edad);
+		console.log(persona.nombre + " " + persona.apellido + " " + persona.edad);	
+	</script>
+</body>
+</html>

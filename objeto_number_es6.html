@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// validamos que algo no sea un número
+		console.log(Number.isNaN(5));
+		// obtenemos: false
+
+		console.log(Number.isNaN(0/0));
+		// obtenemos: true
+
+
+		// preguntamos si el número es finito
+		console.log(Number.isFinite(Infinity));
+		// obtenemos false
+
+		console.log(Number.isFinite(34));
+		// obtenemos true
+
+
+		// validamos si un número es entero
+		console.log(Number.isInteger("casa"));
+		// obtenemos false
+
+		console.log(Number.isInteger(23));
+		// obtenemos true
+
+		console.log(Number.isInteger(23.43));
+		// obtenemos false
+	</script>
+</body>
+</html>

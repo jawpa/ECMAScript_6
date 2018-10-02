@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="saludo"></div>
+	<script>
+		// mapa: es una estructura de dato que tiene clave-valor
+		var car = new Map();
+
+		// le asignamos datos a través del método set
+		car.set("brand","Renault");
+		car.set("modelo",12);
+		car.set("color","rojo");
+
+		console.log(car);
+		// obtenemos: Map(3) {"brand" => "Renault", "modelo" => 12, "color" => "rojo"}
+		
+		// obtenemos propiedades individuales:
+		console.log(car.get('brand'));
+		// obtenemos Renault
+
+		// preguntamos si tiene una propiedad:
+		console.log(car.has("color"));
+		// obtenemos true
+
+		// podemos borrar una propiedad
+		car.delete("modelo");
+		console.log(car.get('modelo'));
+		// obtenemos undefined
+
+		console.log(car.has("modelo"));
+		// obtenemos false
+			</script>
+		</body>
+</html>

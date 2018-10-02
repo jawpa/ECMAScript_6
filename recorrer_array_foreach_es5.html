@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var frameworks = new Array('rails',"laravel","node.js");
+		// escribimos todos los elementos del array
+		frameworks.forEach(function (framework) {
+			console.log(framework);
+		});
+
+		// otra manera:
+		function mostrarElemento(framework) {
+			console.log(framework);
+		}
+
+		frameworks.forEach(mostrarElemento);
+	</script>
+</body>
+</html>

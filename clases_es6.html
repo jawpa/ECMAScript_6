@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Dog{
+			constructor(nombre,color){
+				this.nombre = nombre;
+				this.color = color;
+			}
+
+			ladrar(){
+				return "guau guau";
+			}
+
+			// método estático
+			static hablar(){
+				return "hola, soy el perro que habla";
+			}
+		}
+
+		var dog = new Dog("rulfo","blanco");
+
+		// imprimimos al objeto perro
+		console.log(dog);
+		// accedemos a información específica
+		console.log(dog.nombre);
+		console.log(dog.ladrar());
+
+		// no hace instanciar al método estático
+
+		console.log(Dog.hablar());
+	</script>
+</body>
+</html>
